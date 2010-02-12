@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:mashup="http://code.google.com/p/javafx4jsf/">
+<h:head>
+    <title><ui:insert name="title">Welcome to JavaFX4JSF</ui:insert></title>
+	<link rel="stylesheet" type="text/css" href="../css/basic.css" />    
+	<style>
+		html, body { height: 100% }
+	</style>	
+	<script src="http://dl.javafx.com/1.2/dtfx.js"></script>
+</h:head>
+<f:view contentType="text/html">
+	<h:body bgcolor="white">
+		<table class="pageHeader">
+			<tr>
+				<td width="398px" height="135px">
+					<img src="../images/javafx_logo.jpg" width="398px" height="135px" alt="JavaFX4JSF logo"/>
+				</td>
+				<td width="100%">
+			         <span style="font-size:15px;color:#FFFFFF"> JavaFX4JSF - The JavaFX and JavaServer&#8482; Faces Integration Library</span>
+			         <span style="font-size:10px;color:#FFFFFF">(JavaFX4JSF Version 0.0.1-SNAPSHOT)</span>		
+				</td>	
+			</tr>
+		</table>
+		
+		<ui:insert name="javafxContent">
+		    Insert your JavaFX4JSF Widget here ...
+		</ui:insert>
+		
+		<br /><br />
+		<ui:insert name="footer">
+		    <a href="../index.html">[Back to Home]</a>
+			<a href="#{request.requestURI}.source">[SOURCE]</a> 		
+		</ui:insert>	
+		
+	</h:body>
+</f:view>
+</html>  
