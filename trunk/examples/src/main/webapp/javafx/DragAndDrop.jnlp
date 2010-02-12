@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jnlp spec="1.0+" codebase="file:/C:/Documents%20and%20Settings/Administrator/My%20Documents/NetBeansProjects/Drag%20And%20Drop/dist/" href="DragAndDrop.jnlp">
+    <information>
+        <title>DragAndDrop</title>
+        <vendor>JavaFX Samples Team</vendor>
+        <homepage href=""/>
+        <description>DragAndDrop</description>
+        <offline-allowed/>
+        <shortcut>
+            <desktop/>
+        </shortcut>
+    </information>
+    <resources>
+        <j2se version="1.5+"/>
+        <extension name="JavaFX Runtime" href="http://dl.javafx.com/1.2/javafx-rt.jnlp"/>
+        <jar href="DragAndDrop.jar" main="true"/>
+    </resources>
+    <application-desc main-class="com.sun.javafx.runtime.main.Main">
+        <argument>MainJavaFXScript=draganddrop.Main2</argument>
+    </application-desc>
+    <update check="background">
+</jnlp>
