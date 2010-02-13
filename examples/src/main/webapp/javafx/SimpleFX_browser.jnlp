@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jnlp spec="1.0+" codebase="http://localhost:8082/servlet/org.netbeans.modules.javafx.project.JnlpDownloadServlet/C%3A/Documents+and+Settings/Administrator/My+Documents/NetBeansProjects/SimpleFX/dist/" href="SimpleFX_browser.jnlp">
+<jnlp spec="1.0+" codebase="." href="SimpleFX_browser.jnlp">
     <information>
         <title>SimpleFX</title>
         <vendor>${application.vendor}</vendor>
-        <homepage href="http://localhost:8082/servlet/org.netbeans.modules.javafx.project.JnlpDownloadServlet/C%3A/Documents+and+Settings/Administrator/My+Documents/NetBeansProjects/SimpleFX/dist/"/>
+        <homepage href=""/>
         <description>SimpleFX</description>
         <offline-allowed/>
         <shortcut>
