@@ -18,11 +18,16 @@
  */
 package com.googlecode.javafx4jsf.util;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+
 import javax.faces.component.ActionSource;
 import javax.faces.component.EditableValueHolder;
 import javax.faces.component.UICommand;
 import javax.faces.component.UIComponent;
 import javax.faces.component.UIForm;
+import javax.faces.component.UIParameter;
 import javax.faces.component.ValueHolder;
 import javax.faces.context.FacesContext;
 import javax.faces.convert.Converter;
@@ -312,4 +317,20 @@ public class ComponentUtils {
 					ComponentConstants.CONTEXT_CANNOT_BE_NULL);
 		}
 	}
+	
+    public static Map<String, Object> getParameterMap(UIComponent component) {
+        Map<String, Object> result = new HashMap<String, Object>();
+        
+        for (Iterator iter = component.getChildren().iterator(); iter.hasNext();) {
+            UIComponent child = (UIComponent) iter.next();
+            if (child instanceof UIParameter) {
+                UIParameter uiparam = (UIParameter) child;
+                Object value = uiparam.getValue();
+                if (value != null) {
+                    result.put(uiparam.getName(), value);
+                }
+            }
+        }
+        return result;
+    }      	
 }
