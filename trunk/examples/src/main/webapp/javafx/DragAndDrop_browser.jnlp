@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<jnlp spec="1.0+" codebase="file:/C:/Documents%20and%20Settings/Administrator/My%20Documents/NetBeansProjects/Drag%20And%20Drop/dist/" href="DragAndDrop_browser.jnlp">
+<jnlp spec="1.0+" codebase="." href="DragAndDrop_browser.jnlp">
     <information>
         <title>DragAndDrop</title>
         <vendor>JavaFX Samples Team</vendor>
