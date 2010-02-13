@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:jfx="http://code.google.com/p/javafx4jsf/">
+
+<ui:composition template="../templates/layout.xhtml">
+
+<ui:define name="title">Welcome to the JavaFX4JSF Object component</ui:define>
+
+<ui:define name="javafxContent">
+    <h1>jfxObject component</h1>
+    
+    <h:form id="javafxForm">
+		
+		<h:outputText id="txtOutput" value="Enter your text here: " /> 
+		<h:inputText id="txtInput" value="#{simple.text}" /> 
+		<h:commandButton value="Send to my JavaFX application" action="#{simple.bind}"/>
+		<br />
+		<jfx:jfxObject id="embed1" code="simplefx.Main" archive="../javafx/SimpleFX.jar" widgetName="Simple" width="600" height="100">
+			<f:param name="contextText" value="#{simple.text}" />
+		</jfx:jfxObject>
+		
+    </h:form>
+</ui:define>    
+
+</ui:composition>
+</html>  

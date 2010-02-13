@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="../templates/layout.xhtml">
+
+<ui:define name="title">Welcome to JavaFX4JSF</ui:define>
+<ui:define name="ajaxIncludes"></ui:define>
+
+<ui:define name="javafxContent">
+    <h1>JavaFX4JSF components</h1>
+    
+    <h:form id="javafx4jsfForm">
+    
+                <h:outputText value="jfxObject Component" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="jfxObject.xhtml">
+                        <f:verbatim>A component that allows embedding JavaFX in JSF applications</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid>
+                
+                <h:outputText value="jfxObject Component taking parameters from JSF" />
+                <h:panelGrid style="padding-left:25px">
+                    <h:outputLink value="parameterizedJFXObject.xhtml">
+                        <f:verbatim>Learn how to create the needed interactions between existing JSF applications with JavaFX</f:verbatim>
+                    </h:outputLink>
+                </h:panelGrid> 
+        
+    </h:form>
+</ui:define>    
+<ui:define name="footer">
+</ui:define>    
+
+</ui:composition>
+</html>  
