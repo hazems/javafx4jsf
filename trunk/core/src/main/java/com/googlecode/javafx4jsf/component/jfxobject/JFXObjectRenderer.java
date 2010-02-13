@@ -19,11 +19,15 @@
 package com.googlecode.javafx4jsf.component.jfxobject;
 
 import java.io.IOException;
+import java.util.Map;
+import java.util.Map.Entry;
 
 import javax.faces.component.UIComponent;
 import javax.faces.context.FacesContext;
 import javax.faces.context.ResponseWriter;
 import javax.faces.render.Renderer;
+
+import com.googlecode.javafx4jsf.util.ComponentUtils;
 
 /**
  * @author Hazem Saleh
@@ -44,22 +48,34 @@ public class JFXObjectRenderer extends Renderer {
     @Override
     public void encodeEnd(FacesContext context, UIComponent component) throws IOException {
         if (component.isRendered()) {
-            ResponseWriter  writer    = context.getResponseWriter();
-            JFXObject       jfxObject = (JFXObject) component;
-            String             script    = "<script> \n" +
-                                            "javafx(\n" +
+        	Map<String, Object> parameters = ComponentUtils.getParameterMap(component);
+            ResponseWriter  	writer     = context.getResponseWriter();
+            JFXObject       	jfxObject  = (JFXObject) component;
+            String          	script     = "<script> \n" +
+                                             "javafx(\n" +
                                                  "{\n" +
-                                                      "id: \"" + jfxObject.getId() + "\",\n" +
+                                                      "id: \"" + jfxObject.getClientId(context) + "\",\n" +
                                                       "archive: \"" + jfxObject.getArchive() + "\",\n" +
                                                       "width: " + jfxObject.getWidth() + ",\n" +
                                                       "height: " + jfxObject.getHeight() +",\n" +
                                                       "code: \"" + jfxObject.getCode() + "\",\n" +
-                                                      "name: \"" + jfxObject.getWidgetName() + "\"\n" +
+                                                      "name: \"" + jfxObject.getWidgetName() + "\"" +
+                                                      renderUserParameters(parameters) +
                                                   "}\n" +
-                                             ");\n" +
-                                             "</script>";            
+                                          ");\n" +
+                                          "</script>";            
             
             writer.write(script);
         }
     }
+
+	private String renderUserParameters(Map<String, Object> parameters) {
+		String parametersValue = "";
+		
+		for(String key : parameters.keySet()) {
+			parametersValue += ", \n" + key + ": \"" + (String) parameters.get(key) + "\""; 
+		}
+		
+		return parametersValue;
+	}
 }
